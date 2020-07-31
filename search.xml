@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>GNU Project 及計算機發展史</title>
+      <link href="/2020/07/30/gnu-project/"/>
+      <url>/2020/07/30/gnu-project/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>We can’t live, work, or learn in freedom unless the software we use is free.<br>– GNU Project <span class="emoji" alias="computer" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png?v8">💻</span> </p></blockquote><h2 id="話說從頭"><a href="#話說從頭" class="headerlink" title="話說從頭"></a>話說從頭</h2><p>計算機的發展總是離不開人類的需求。</p><p>最初計算機目的在提供計算功能，這也是為什麼計算機的英文是 Computer。當然這跟我們的想像上差很多，上面也沒有作業系統，人們需要帶著打孔紙帶去操作機器。機器讀入程式後就會開始工作直到程式停止。</p><p>後來為了便利使用者，軟體工程師將一些 library 移植到計算機上來幫助輸入輸出，這也就是 <strong>作業系統</strong> 最初的使命 – 「提供更方便的介面讓使用者操作計算機。</p><p>說到底作業系統就是一個 <em>Abstraction</em>，他向下跟硬體打交道，向上則提供系統呼叫(System Call)等介面方便使用者使用，讓上層工程師開發軟體時不用考慮到底層的東西。</p><div id="flowchart-0" class="flow-chart"></div><hr><h2 id="UNIX-作業系統"><a href="#UNIX-作業系統" class="headerlink" title="UNIX 作業系統"></a>UNIX 作業系統</h2><p>從二戰以來，計算機與作業系統的發展持續進行著。硬體方面大致就跟著摩爾定律，積體電路上可容納的電晶體數目越來越多，使得計算機的算力越來越強大；軟體方面則是持續 <em>Abstraction</em> 的工作，包括開發相關 library、cmd 與 debugger 等工具讓使用者能更方便的操作計算機。</p><p>然而沒過幾十年，這個 “Single-User, Single-Task” 的計算機越來越不符合人們的期待。人們開始希望這台計算機能夠同時多人使用、可以共享運算硬體資源給多個程式等。也正是因為這個需求，緊接而來的就是作業系統蓬勃發展的時代。</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">digraph graphname{</span><br><span class="line">        "Single-User / Single-Task OS (~1960)" -&gt; "Multi-Task / Multi-User OS (1960~)";</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure><p>1964 年，MIT、通用電信(Generic) 以及 AT&amp;T 貝爾實驗室(Bell Lab) 合作發開分時作業系統 Multics，不過因為野心太大而在 1969 年以失敗收場。不過貝爾實驗室中的 Ken Thompson 以及 Dennis Ritchie 則在工作之餘承接 Multics 繼續開發，到 1970 年完成了初版 UNIX。</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Ken_Thompson_%28sitting%29_and_Dennis_Ritchie_at_PDP-11_%282876612463%29.jpg"></p><ul><li>圖為 Ken Thompson &amp; Dennis Ritchie 工作的照片</li><li>Credit : By <a rel="nofollow" class="external text" href="https://www.flickr.com/people/30188295@N07">Peter Hamer</a> - <a rel="nofollow" class="external text" href="https://web.archive.org/web/20111214202040/http://www.flickr.com/photos/peter-hamer/2876612463/">Ken Thompson (sitting) and Dennis Ritchie at PDP-11 </a> Uploaded by <a href="//commons.wikimedia.org/wiki/User:Magnus_Manske" title="User:Magnus Manske">Magnus Manske</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0" title="Creative Commons Attribution-Share Alike 2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=24512134">Link</a></li></ul><p>直到 1971 年，這個看似沒有用的東西終於派上了用場，貝爾實驗室智財部門正巧需要一台用於文書處理的電腦，因此他們便將初版 UNIX 移植到 PDP-11/20 上，並在後續的兩年發明了 C 語言並重寫 UNIX 作業系統 (本來是用組合語言)，並在 1974 年釋出第二版 UNIX 作業系統。</p><p>也因為是用 C 語言開發，UNIX 作業系統在當時有著易讀、易改、易移植 (反觀其他以組合語言開發的作業系統改 ISA 就要整套重寫) 等優勢。正是因為上述的優點，使得每個人都很容易的根據 UNIX 原始碼繼續開發。UNIX 系統也在傳入各大學後便被發揚光大，演化成各式不同的作業系統，像是 Berkley 主導的 BSD。</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Unix_history-simple.svg"></p><ul><li>圖為 UNIX 演化圖</li><li>Credit : By <a href="//commons.wikimedia.org/wiki/User:Eraserhead1" title="User:Eraserhead1">Eraserhead1</a>, <a href="//commons.wikimedia.org/wiki/User:Infinity0" title="User:Infinity0">Infinity0</a>, <a href="//commons.wikimedia.org/wiki/User:Sav_vas" title="User:Sav vas">Sav_vas</a> - <a rel="nofollow" class="external text" href="http://www.levenez.com/unix/history.html">Levenez Unix History Diagram</a>, <a rel="nofollow" class="external text" href="http://www.ibm.com/developerworks/library/it-schenk1/schenk3.html">Information on the history of IBM’s AIX on ibm.com</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=1801948">Link</a></li></ul><hr><h2 id="GNU-Project"><a href="#GNU-Project" class="headerlink" title="GNU Project"></a>GNU Project</h2><p>可惜好景不常，到了 1980 年左右，美國上下都開始注意到 “CopyRight” 的重要性，除了 Bill Gates 在 1976 年提出軟體私有化公開信以外，UNIX 以及 UNIX 上的許多軟體商也開始走向閉源、專有軟體，拒絕提供原始碼供使用者修改。</p><p>正是因為這股趨勢，在 1983 年 Richard Matthew Stallman 決定挺身而出發起了 GNU 計畫，以抵擋這波私有化趨勢。</p><p>GNU 最終目標是成立一個完全自由的作業系統，希望每位使用者都能夠「自由使用」整台電腦的程式碼。所謂「自由使用」還包含自由修改、自由學習原始碼、自由分享給他人等。</p><p>GNU Project 在軟體開發上獲得空前的成功，當中仍有現在還在使用的軟體，例如 <code>gcc</code>、<code>gdb</code>、<code>emacs</code> 等軟體。更重要的是 GNU 發表了 <a href="https://www.gnu.org/licenses/quick-guide-gplv3.en.html">GNU通用公眾授權條款(GPL)</a>。GPL 是個 “Copyleft” 的授權，雖然這將讓程式開發者被迫放棄其部分權利，卻也同時使得大眾都能自由的使用、修改這些程式碼，自然使開發的速度更快、Bug 更少。</p><hr><h2 id="GNU-Linux"><a href="#GNU-Linux" class="headerlink" title="GNU/Linux"></a>GNU/Linux</h2><p><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Linux_kernel_ubiquity.svg"></p><ul><li>Linux 作業系統與我們的生活</li><li>Credit : By Shmuel Csaba Otto Traian, <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=28506087">Link</a></li></ul><p>1980 年末期，BSD 系統成為 UNIX 分支中的主流，原因除了 BSD 開源外，更重要的是 BSD4.3 是最初開發出有 TCP/IP 功能的作業系統核心。也正因為如此，使用者紛紛投入 BSD 的懷抱，並促成了 1990 年代網路的蓬勃發展。</p><p>BSD 的成功引來了 AT&amp;T 公司的注意，他們很快地發現 BSD4.3 作業系統核心中有部分程式碼仍使用 UNIX 的程式碼，因此就向 BSD 提出了智財權訴訟。</p><p>先不論訴訟的結果如何，AT&amp;T 對 BSD 提出訴訟這件事情對當時軟體開發者社群造成很大的影響，許多人開始害怕使用 BSD 系統，深怕哪天就被 AT&amp;T 大公司提出智財訴訟。</p><p>而正在此時，一位在赫爾辛基大學的大學生 Linus Torvalds 就開始寫一個他自己的作業系統 – 也就是後來的 Linux 核心。這位天才 Linus 只花了大概一年就完成了這個作業系統，並在 1991 年以 GNU GPL 授權發布，這時候 AT&amp;T 與 BSD 的訴訟仍持續在進行，而這個自由且沒有法律疑慮的作業系統，變成了開發者的新寵。</p><p>就從那時候開始，我們又擁有了一套全自由的作業系統核心，許多軟體開發者也將 GNU 的許多元素融合進 Linux 核心中，成為了一個完整而強大的作業系統。</p><p>也就是這樣，GNU/Linux 誕生了，並演化出了許多 Linux 發行版，像是 CentOS, Fedora, Debian, Ubuntu, ArchLinux 等作業系統，常用於大型伺服器及個人電腦。而除此之外，手機的 Android 系統也是基於 Linux 作業系統開發而來；嵌入式系統更是不用說，大多數都是由 Linux 演化而來，其中較為著名的像是 TESLA MODEL S 就是由 Ubuntu 改寫而成。</p><hr><h2 id="Reference-x1f4d1"><a href="#Reference-x1f4d1" class="headerlink" title="Reference 📑"></a>Reference <span class="emoji" alias="bookmark_tabs" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d1.png?v8">📑</span></h2><ul><li>Wikipedia<ul><li><a href="https://zh.wikipedia.org/wiki/GNU">GNU 頁面</a></li><li><a href="https://zh.wikipedia.org/wiki/UNIX">UNIX 頁面</a></li><li><a href="https://zh.wikipedia.org/wiki/Linux">Linux 頁面</a></li><li><a href="https://en.wikipedia.org/wiki/History_of_operating_systems">作業系統歷史</a></li></ul></li><li><a href="https://gnu.org/">GNU 官網</a></li><li><a href="https://hackmd.io/@sysprog/revolution-os-note#Bill-Gates-%E5%9C%A8-1976-%E5%B9%B4%E5%80%A1%E8%BB%9F%E9%AB%94%E7%A7%81%E6%9C%89%E5%8C%96%E7%9A%84%E5%85%AC%E9%96%8B%E4%BF%A1">Jserv 從 Revolution OS 看作業系統生態變化</a></li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">digraph graphname{        "使用者" -&gt; "作業系統";        "作業系統" -&gt; "硬體";    }</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 科普文章 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> GNU </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Initial Commit</title>
+      <link href="/2020/07/30/first-page/"/>
+      <url>/2020/07/30/first-page/</url>
+      
+        <content type="html"><![CDATA[<p>最近心血來潮想開始來寫技術性部落格，所以就用 hexo + github page 簡單弄出個 blog 了</p><p>談到想寫部落格的原因，大概有兩個吧：</p><ol><li>學過的東西越來越多，再不好好紀錄就要都忘了</li><li>現在上網查詢資料都看到很多簡體中文(知乎、CSDN)，而繁體中文卻越來越少了…，所以想說拋磚引玉來開始寫技術性部落格，希望可以造成一股大家互相分享的風氣</li></ol><p>大概就這樣吧，發這篇文只是把它當成 “Initial Commit” 而已 XD</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2020/07/30/hello-world/"/>
+      <url>/2020/07/30/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
